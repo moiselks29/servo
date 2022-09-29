@@ -1,7 +1,5 @@
 // inclusion des bibliothèques utiles
-#if defined ARDUINO_ARCH_ESP8266  // s'il s'agit d'un ESP8266
-#include <ESP8266WiFi.h>
-#include <ESP8266WebServer.h>
+
 #elif defined ARDUINO_ARCH_ESP32  // s'il s'agit d'un ESP32
 #include "WiFi.h"
 #include <WebServer.h>
@@ -16,11 +14,7 @@
 #define ssid      "**********"       // le nom (SSID) de votre réseau WiFi
 #define password  "**********"  // votre mot de passe WiFi
 
-// le servomoteur est contrôlé par les GPIO 4 de l'ESP8266
-#define pinServo 4
 
-#if defined ARDUINO_ARCH_ESP8266  // s'il s'agit d'un ESP8266
-ESP8266WebServer server(80);
 #elif defined ARDUINO_ARCH_ESP32  // s'il s'agit d'un ESP32
 WebServer server(80);
 #endif
